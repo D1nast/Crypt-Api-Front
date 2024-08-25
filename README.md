@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# WEBサイト概要
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CoinCap API2.0を用いたWEBサイトです。
+仮想通貨が好きなので、そのAPIを使ったサイトを作りたいと思いました。
 
 ## Available Scripts
 
