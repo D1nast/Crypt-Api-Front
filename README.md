@@ -3,9 +3,12 @@
 CoinCap API2.0を用いたWEBサイトです。
 仮想通貨が好きなので、そのAPIを使ったサイトを作りたいと思いました。
 
-## Available Scripts
+## 使用技術
 
-In the project directory, you can run:
+- **Frontend**:
+  - [React](https://reactjs.org/) - JavaScript ライブラリ for building user interfaces.
+  - [Material-UI](https://mui.com/) - React コンポーネントライブラリ.
+  - [Axios](https://axios-http.com/) - Promise ベースの HTTP クライアント.
 
 ### `npm start`
 
