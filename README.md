@@ -8,7 +8,7 @@ React
 Material-UI
 Axios
 
-これは同じ段落です。  
+React。  
 次の行は改行されます。
 
 
