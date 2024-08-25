@@ -1,15 +1,12 @@
 # WEBサイト概要
 
 CoinCap API2.0を用いたWEBサイトです  
-仮想通貨が好きなので、そのAPIを使ったサイトを作りたいと思いました。
+仮想通貨が好きなので、そのAPIを使ったサイトを作りたいと思いました
 
 ## 使用技術
-React
-Material-UI
+React  
+Material-UI  
 Axios
-
-React
-Material-UI。
 
 
 ### `npm start`
