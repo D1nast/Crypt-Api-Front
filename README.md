@@ -8,8 +8,8 @@ React
 Material-UI
 Axios
 
-React。  
-次の行は改行されます。
+React
+Material-UI。
 
 
 ### `npm start`
