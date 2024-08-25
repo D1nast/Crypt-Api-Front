@@ -1,0 +1,34 @@
+
+axiosのインストール時、9つの「脆弱性」が発生
+3 moderate 6 high
+
+<インストール等のコマンド実行履歴>
+2024.8.24   
+下記コマンドでmaterial UI導入
+npm install @mui/material @emotion/react @emotion/styled
+
+
+<使用技術>
+React vいくつ
+node js vいくつ
+CoinCap API2.0
+
+<課題>
+Object.keysの動作がよくわからない
+小数点の部分どうしたっけ
+RankingとFearturedで2度リクエストしているので、統合する
+Ranking.jsxのHTMLの構造を再確認
+
+<サイトの仕様・工夫したこと>
+coincap apiのデータを引っ張ってくる
+なるべくコードを書かない・他の人にもわかりやすく
+→MaterialUIの活用
+
+<API用メモ>
+Rank
+BTC:1
+ETH:2
+SOL:5
+ADA:10
+AVAX:11
+DOT:16
