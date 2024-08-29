@@ -43,13 +43,13 @@ export default function FeaturedCurrency() {
     },[]); 
 
   return (
-    <div style={{margin:'100px',textAlign:'center'}}> 
+    <div style={{margin:'100px',textAlign :'center'}}> 
       <Typography variant="h4" color="text.secondary" margin="15px">Featured Currency</Typography>
       <div style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center',flexWrap:'wrap',gap:'16px'}}>
       {Object.keys(coins).map((key) => {
       const coin = coins[key];
       //↑各アイテムを作成
-      
+
       const formatter = new Intl.NumberFormat('en-US', {
         maximumFractionDigits: 2,
         minimumFractionDigits: 2

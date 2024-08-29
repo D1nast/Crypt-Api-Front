@@ -11,8 +11,8 @@ import {Link}  from '@mui/material';
 
 const drawerWidth = 240;
 const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/' },
+    { name: 'Home', href: '/abc' },
+    { name: 'About', href: '/abc' },
     { name: 'GitHub', href: 'https://github.com/D1nast' }
   ];
 

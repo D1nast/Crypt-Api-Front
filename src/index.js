@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 //基本セッティング
 
 import Header from './Header.jsx';
@@ -13,10 +15,14 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header/>
-    <FeaturedCurrency/>
-    <Ranking/>
-    <App/>
+    <BrowserRouter>
+      <Routes>
+        {/* <Route index element={<Header/>}/> */}
+        <Route index element={<FeaturedCurrency />}/>
+        {/* <Ranking/> */}
+        <Route path="/abc" element={<App/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
