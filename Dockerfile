@@ -44,9 +44,14 @@ RUN --mount=type=bind,source=package.json,target=package.json \
 # Copy the rest of the source files into the image.
 COPY . .
 
-# Set proper permissions
+# Set proper permissions for the node_modules directory.
+RUN chown -R node:node /usr/src/app
+
+# Remove the cache directory to avoid permission issues.
+RUN rm -rf /usr/src/app/node_modules/.cache
+
 # Run the build script.
-RUN npm start
+RUN npm run build
 
 ################################################################################
 # Create a new stage to run the application with minimal runtime dependencies
