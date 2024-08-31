@@ -43,7 +43,7 @@ export default function FeaturedCurrency() {
 
   return (
     <div style={{margin:'100px',textAlign :'center'}}> 
-      <Typography variant="h4" color="text.secondary" margin="15px">Featured Currency</Typography>
+      <Typography variant="h4" color="text.secondary" margin="15px">注目銘柄</Typography>
       <div style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center',flexWrap:'wrap',gap:'16px'}}>
       {Object.keys(coins).map((key) => {
       const coin = coins[key];
@@ -62,24 +62,25 @@ export default function FeaturedCurrency() {
 
       return (
         <Card key={key} sx={{ maxWidth: 400, marginBottom: 2 }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            title={coin.name}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {coin.name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Price: ${formatter.format(coin.priceUsd)}
-              <br/>
-              Supply:{formatter.format(coin.supply)}
-              <br/>
-              MarketCap:${calculateMarketCap(coin.priceUsd,coin.supply)}
-            </Typography>
+          <CardMedia sx={{ height: 140 }} title={coin.name}/>
+          <CardContent >
+              <Typography gutterBottom variant="h5" component="div">
+                {coin.name}
+              </Typography>
+              <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start'}}>
+                <Typography variant="body2" color="text.secondary">
+                  価格: ${formatter.format(coin.priceUsd)}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  供給量:{formatter.format(coin.supply)}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  時価総額:${calculateMarketCap(coin.priceUsd,coin.supply)}
+                </Typography>
+              </div>
           </CardContent>
           <CardActions>
-            <Button size="small">Learn More</Button>
+            <Button size="small">詳細</Button>
           </CardActions>
         </Card>
       );

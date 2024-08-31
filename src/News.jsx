@@ -75,7 +75,7 @@ export default function NewsAPI(){
                         <h2>{res.description}</h2>
                         <a href={res.url}>URL</a> 
                     </div>
-                    <div style={{flex:2,maxWidth:'35%'}}>
+                    <div style={{flex:2,maxWidth:'35%',paddingLeft:'50px'}}>
                         <h2>{res.author}</h2> 
                     </div>
                 </div>                    
