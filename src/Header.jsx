@@ -11,8 +11,8 @@ import {Link}  from '@mui/material';
 
 const drawerWidth = 240;
 const navItems = [
-    { name: 'Home', href: '/abc' },
-    { name: 'About', href: '/abc' },
+    { name: 'Home', href: '/' },
+    { name: 'News', href: '/news' },
     { name: 'GitHub', href: 'https://github.com/D1nast' }
   ];
 
@@ -35,7 +35,7 @@ function Header(props) {
         <Toolbar>
           {/* ここからヘッダー */}
           <Typography variant="h" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}>
-            Crypt Market Cap
+            仮想通貨情報サイト
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
