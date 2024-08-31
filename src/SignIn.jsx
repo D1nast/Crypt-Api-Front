@@ -1,20 +1,32 @@
-import { React,useEffect,useState } from "react";
+import { React,useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+
+
 
 export default function SignIn(){
-    const [name,setName] = useState("");
     const [address,setAddress] = useState("");
+    const [pass,setPass] = useState("");
+    const navigate = useNavigate();
+    const onClick = async () => {
+        // ここに処理をかく
+    };
 
     return(
-        <div style={{display:'flex',flexDirection:'column',margin:'200px'}}>
-            <Typography>ログイン</Typography>
+        <Box sx={{border:0}} style={{margin:'200px 400px 0px 400px',padding:"40px",display:'flex',
+            flexDirection:'column',alignItems:"center",textAlign:"center",border:"solid #5d627b",boxShadow:"0 3px 5px rgba(0, 0, 0, 0.22)"}}>
+            <Typography style={{marginBottom:"20px"}}>Sign in</Typography>
             <div>
-            <input value={name} onChange={(e) => setName(e.target.value)} style={{ width: "500px" }}/>
+            <input value={address} placeholder="Mail" onChange={(e) => setAddress(e.target.value)} style={{ width: "400px" }}/>
             </div>
             <div style={{marginTop:'50px'}}>
-            <input value={address} onChange={(e) => setAddress(e.target.value)} style={{ width: "500px"}}/>
-            </div>             
-        </div>
+            <input value={pass} placeholder="Pass" onChange={(e) => setPass(e.target.value)} style={{ width: "400px"}}/>
+            </div> 
+            <div style={{ marginTop: "20px" }}>
+           <button onClick={onClick}>ログイン</button>
+           </div>
+        </Box>              
     );
 }
