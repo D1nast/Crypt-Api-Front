@@ -17,9 +17,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Header/>
-    {/* <Ranking/> */}
       <Routes>
-        {/* <Route index element={<FeaturedCurrency />}/> */}
+        <Route index element={<FeaturedCurrency />}/>
+        <Route index element={<Ranking />}/>
         <Route path="news" element={<NewsAPI />}/>
       </Routes>
     </BrowserRouter>
