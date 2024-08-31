@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 //↑MaterialUI
 import { React,useEffect,useState } from "react";
 import axios from 'axios';
-import logo from './logo.svg';
 
 
 export default function FeaturedCurrency() {
@@ -65,7 +64,6 @@ export default function FeaturedCurrency() {
         <Card key={key} sx={{ maxWidth: 400, marginBottom: 2 }}>
           <CardMedia
             sx={{ height: 140 }}
-            image={logo} 
             title={coin.name}
           />
           <CardContent>

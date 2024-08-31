@@ -5,9 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //基本セッティング
 
 import Header from './Header.jsx';
-import App from './App.jsx'
 import FeaturedCurrency from './FeaturedCurrency.jsx';
 import Ranking from './Ranking.jsx';
+import NewsAPI from './News.jsx';
 //ページの読み込み
 
 import reportWebVitals from './reportWebVitals';
@@ -16,11 +16,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Header/>
+    {/* <Ranking/> */}
       <Routes>
-        {/* <Route index element={<Header/>}/> */}
-        <Route index element={<FeaturedCurrency />}/>
-        {/* <Ranking/> */}
-        <Route path="/abc" element={<App/>}/>
+        {/* <Route index element={<FeaturedCurrency />}/> */}
+        <Route path="news" element={<NewsAPI />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

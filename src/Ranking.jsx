@@ -3,17 +3,16 @@ import axios from 'axios';
 //React setup
 
 import Typography from '@mui/material/Typography'
-import './App.css';
 // CSS setup
 
 export default function Ranking () {
     const [coins,setCoindata] = useState({
          coin:{rank:"",name:"",marketCap:"",price:""},
     });
-       
       useEffect(() => {
         const fetchCoin = async () => {
-            const response = await axios.get(`https://api.coincap.io/v2/assets?limit=30`);
+          const url  = process.env.REACT_APP_API
+            const response = await axios.get(url);
             const coinData =response.data.data.reduce((acc,response,index)=>{
                 const coinKey = `coin${index+1}`;
                 acc[coinKey]={
