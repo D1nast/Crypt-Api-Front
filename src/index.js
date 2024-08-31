@@ -8,6 +8,7 @@ import Header from './Header.jsx';
 import FeaturedCurrency from './FeaturedCurrency.jsx';
 import Ranking from './Ranking.jsx';
 import NewsAPI from './News.jsx';
+import SignIn from './SignIn.jsx';
 //ページの読み込み
 
 import reportWebVitals from './reportWebVitals';
@@ -21,6 +22,7 @@ root.render(
         <Route index element={<FeaturedCurrency />}/>
         <Route index element={<Ranking />}/>
         <Route path="news" element={<NewsAPI />}/>
+        <Route path="/signin" element={<SignIn />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

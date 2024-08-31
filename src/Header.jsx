@@ -13,6 +13,7 @@ const drawerWidth = 240;
 const navItems = [
     { name: 'Home', href: '/' },
     { name: 'News', href: '/news' },
+    { name: 'singin', href: '/signin' },
     { name: 'GitHub', href: 'https://github.com/D1nast' }
   ];
 
