@@ -56,6 +56,7 @@ export default function NewsAPI(){
         <div style={{margin:'100px 0 20px 0' ,textAlign:'center'}}>
             <Typography variant="h4" color="text.secondary" margin="15px">News Topics</Typography>
         </div>
+        <div style={{displey:'flex',alignItems:"center"}}>
         <Tabs value={value} onChange={handleChange}>
           <Tab label="1" {...a11yProps(0)} />
           <Tab label="2" {...a11yProps(1)} />
@@ -63,6 +64,7 @@ export default function NewsAPI(){
           <Tab label="4" {...a11yProps(3)} />
           <Tab label="5" {...a11yProps(4)} />
         </Tabs>
+        </div>
         <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}> 
         {news.slice(0,5).map((res,key)=>{

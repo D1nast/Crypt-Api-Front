@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import { React,useEffect,useState } from "react";
 import axios from 'axios';
 
-
 export default function FeaturedCurrency() {
 
   const [coins,setCoindata] = useState({

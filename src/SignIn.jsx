@@ -1,5 +1,5 @@
 import { React,useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -11,7 +11,10 @@ export default function SignIn(){
     const [pass,setPass] = useState("");
     const navigate = useNavigate();
     const onClick = async () => {
-        // ここに処理をかく
+        const url = `${process.env.REACT_APP_API}/login`;
+        const login = await axios.post(url,{address,pass}); 
+        await login
+        navigate("/", { replace: true });
     };
 
     return(
