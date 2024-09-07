@@ -5,14 +5,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //基本セッティング
 
 import Header from './Header.jsx';
-import FeaturedCurrency from './FeaturedCurrency.jsx';
-// import Ranking from './Ranking.jsx';
+import Footer from './Footer.jsx';
 import NewsAPI from './News.jsx';
 import SignIn from './SignIn.jsx';
-
+import LP from './LP.jsx';
 //ページの読み込み
-
 import reportWebVitals from './reportWebVitals';
+import FeaturedCurrency from './FeaturedCurrency.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,11 +19,11 @@ root.render(
     <BrowserRouter>
     <Header/>
       <Routes>
-        <Route index element={<FeaturedCurrency />}/>
-        {/* <Route index element={<Ranking />}/> */}
+        <Route index element={<LP />}/>
         <Route path="/news" element={<NewsAPI />}/>
         <Route path="/signin" element={<SignIn />}/>
       </Routes>
+    <Footer/>
     </BrowserRouter>
   </React.StrictMode>
 );

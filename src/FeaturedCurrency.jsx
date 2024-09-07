@@ -11,7 +11,7 @@ import axios from 'axios';
 export default function FeaturedCurrency() {
 
   const [coins,setCoindata] = useState({
-    coin:{name:"",priceUsd:"",supply:""},
+    coin:{name:"",priceUsd:"",supply:"",image:""},
   });
    
   useEffect(() => {
@@ -19,6 +19,7 @@ export default function FeaturedCurrency() {
 
         //以下配列に掲載したい銘柄のcoincapのidを書く
         const coinIds = ['bitcoin','ethereum','solana','avalanche','cardano','polkadot'];
+        const coinImages =['/bitcoin.webp','/ethereum.png','/solana.jpg','/avax.jpg','/cardano.png','/polkadot.png']
         const requests = coinIds.map(id => axios.get(`https://api.coincap.io/v2/assets/${id}`));
         const responses = await Promise.all(requests);
         //↑CoinCap APIからのデータ取得
@@ -30,7 +31,8 @@ export default function FeaturedCurrency() {
           acc[coinKey] = {
             name:data.name,
             priceUsd:data.priceUsd,
-            supply:data.supply
+            supply:data.supply,
+            image:coinImages[index]
           };
           return acc;
         },{});
@@ -60,8 +62,8 @@ export default function FeaturedCurrency() {
       //↑小数点の整えと時価総額の計算
 
       return (
-        <Card key={key} sx={{ maxWidth: 400, marginBottom: 2 }}>
-          <CardMedia sx={{ height: 140 }} title={coin.name}/>
+        <Card key={key} sx={{ maxWidth: 400, marginBottom:2}}>
+          <CardMedia sx={{height:220,width:'100%',objectFit:'cover',}} title={coin.name} image={coin.image}/>
           <CardContent >
               <Typography gutterBottom variant="h5" component="div">
                 {coin.name}

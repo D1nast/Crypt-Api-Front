@@ -11,9 +11,9 @@ export default function Ranking () {
     });
       useEffect(() => {
         const fetchCoin = async () => {
-          const url  = process.env.REACT_APP_API
+          const url =`${process.env.REACT_APP_API}`
             const response = await axios.get(url);
-            const coinData =response.data.data.reduce((acc,response,index)=>{
+            const coinData =await response.data.data.reduce((acc,response,index)=>{
                 const coinKey = `coin${index+1}`;
                 acc[coinKey]={
                     rank:response.rank,
@@ -30,7 +30,7 @@ export default function Ranking () {
         return (
             <div style={{ padding: '100px', textAlign: 'center', backgroundColor: '#f5f5f5' }}>
               <Typography variant="h4" color="text.secondary" paddingBottom="80px">
-                Cryptocurrency Prices by Market Cap
+                時価総額ランキング
               </Typography>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                 {/* ヘッダー */}
@@ -46,17 +46,17 @@ export default function Ranking () {
                 }}>
                   <div style={{ flex: 1, textAlign: 'left' }}>
                     <Typography variant="h6" component="div" fontWeight="bold">
-                      Rank
+                      順位
                     </Typography>
                   </div>
                   <div style={{ flex: 2, textAlign: 'center' }}>
                     <Typography variant="h6" component="div" fontWeight="bold">
-                      Name
+                      銘柄
                     </Typography>
                   </div>
                   <div style={{ flex: 2, textAlign: 'right' }}>
                     <Typography variant="h6" component="div" fontWeight="bold">
-                      Market Cap
+                      時価総額
                     </Typography>
                   </div>
                 </div>
