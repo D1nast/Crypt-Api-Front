@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-//基本セッティング
+import reportWebVitals from './reportWebVitals';
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import NewsAPI from './News.jsx';
 import SignIn from './SignIn.jsx';
 import LP from './LP.jsx';
-//ページの読み込み
-import reportWebVitals from './reportWebVitals';
-import FeaturedCurrency from './FeaturedCurrency.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
