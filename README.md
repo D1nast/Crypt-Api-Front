@@ -15,8 +15,13 @@
   https://favicon.io/
 
 ## 使用技術
-- React v18.3.1  
+<フロントエンド>
+- React v18.3.1
 - Material-UI
+<バックエンド>
+- Ruby v3.1.2
+- Rails v6.1.7.8
+<インフラ>
 
 ## 機能
 - CoinCap API2.0との通信
