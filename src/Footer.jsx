@@ -1,28 +1,35 @@
 import React from 'react';
+import { FaGithub } from 'react-icons/fa'; 
+import Link from '@mui/material/Link';
+import ScrollToTopButton from './ScrollTop'; 
+import { Typography } from '@mui/material';
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#282c34', color: 'white', padding: '20px 0', textAlign: 'center' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '20px' }}>
-          <h1>Company</h1>
-        </div>
-        <div style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
-          <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Home</a>
-          <a href="#" style={{ color: 'white', textDecoration: 'none' }}>About</a>
-          <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Services</a>
-          <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Contact</a>
-        </div>
-        <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-          <a href="#" aria-label="Facebook" style={{ color: 'white', textDecoration: 'none' }}>FB</a>
-          <a href="#" aria-label="Twitter" style={{ color: 'white', textDecoration: 'none' }}>TW</a>
-          <a href="#" aria-label="Instagram" style={{ color: 'white', textDecoration: 'none' }}>IG</a>
-        </div>
-        <div style={{ fontSize: '14px' }}>
-          <p>&copy; 2024 Company Name. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+        <footer style={{ backgroundColor: '#282c34', color: 'white', padding: '20px 0' }}>
+            <div style={{display:'flex',height:'auto',width:'100%'}}>
+                <div style={{flex:'2',paddingLeft:'80px'}}>
+                    <img src="/cnicon.png" alt="Description" style={{ width: '100%', height: 'auto' }} />
+                </div>
+                <div style={{flex:'8',paddingLeft:'300px'}}>
+                    <Typography variant="h6" style={{borderBottom:'2px solid white',display:'inline-block',width:'150px'}}>
+                        About
+                    </Typography>
+                    <p>仮想通貨のマーケット情報がわかるサイトです<br/>
+                        「News」では、NewsAPIから取得した直近1週間の話題のニュースが表示されます
+                    </p>
+                    <div style={{ display: 'flex', flexDirection: 'column'}}>
+                    <Typography variant="h6" style={{borderBottom:'2px solid white',display:'inline-block',width:'150px'}}>
+                        GitHub
+                    </Typography>
+                    <Link href="https://github.com/D1nast" target="_blank" rel="noopener noreferrer" marginTop={'10px'}>
+                     <FaGithub size={24} color="#ffffff" />
+                    </Link>
+                    </div>
+                </div>
+            </div>
+            <ScrollToTopButton />
+        </footer>
   );
 }
 

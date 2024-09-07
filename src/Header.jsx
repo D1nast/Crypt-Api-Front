@@ -32,15 +32,15 @@ function Header(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{ backgroundColor:'#CCB3B7'}}>
         <Toolbar>
           {/* ここからヘッダー */}
-          <Typography variant="h" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}>
+          <Typography variant="h" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block',color:'#22292C'}}}>
             仮想通貨情報サイト
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item.name} component={Link} href={item.href} sx={{ color: '#fff' }}>
+              <Button key={item.name} component={Link} href={item.href} sx={{ color: '#22292C' }}>
                 {item.name}
               </Button>
             ))}
