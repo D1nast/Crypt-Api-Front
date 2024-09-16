@@ -49,15 +49,14 @@ export default function FeaturedCurrency() {
       {Object.keys(coins).map((key) => {
       const coin = coins[key];
       //↑各アイテムを作成
-
-      const formatter = new Intl.NumberFormat('en-US', {
-        maximumFractionDigits: 2,
-        minimumFractionDigits: 2
-      });
+      const adjustNumber =(num)=>{
+        const changeNumber = Math.ceil(num).toLocaleString();
+        return changeNumber;
+      };
       const calculateMarketCap = (priceUsd,supply)=>{
         const MarketCap = parseFloat(priceUsd) * parseFloat(supply);
-        const formattedNumber = formatter.format(MarketCap);
-        return formattedNumber;
+        const changeNumber = Math.ceil(MarketCap).toLocaleString();
+        return changeNumber;
       };
       //↑小数点の整えと時価総額の計算
 
@@ -70,10 +69,10 @@ export default function FeaturedCurrency() {
               </Typography>
               <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start'}}>
                 <Typography variant="body2" color="text.secondary">
-                  価格: ${formatter.format(coin.priceUsd)}
+                  価格: ${adjustNumber(coin.priceUsd)}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  供給量:{formatter.format(coin.supply)}
+                  供給量:{adjustNumber(coin.supply)}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   時価総額:${calculateMarketCap(coin.priceUsd,coin.supply)}

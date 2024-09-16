@@ -18,7 +18,7 @@ export default function Ranking () {
                 acc[coinKey]={
                     rank:response.rank,
                     name:response.name,
-                    marketCap:response.marketCapUsd,
+                    marketCap:Math.ceil(response.marketCapUsd).toLocaleString(),
                     price:response.priceUsd
                 };
                 return acc;
@@ -85,7 +85,7 @@ export default function Ranking () {
                       </div>
                       <div style={{ flex: 2, textAlign: 'right' }}>
                         <Typography variant="body2" color="text.secondary">
-                          MarketCap: {coin.marketCap}
+                          ${coin.marketCap}
                         </Typography>
                       </div>
                     </div>
