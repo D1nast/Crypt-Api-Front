@@ -8,6 +8,8 @@ import Footer from './Footer.jsx';
 import NewsAPI from './News.jsx';
 import SignIn from './SignIn.jsx';
 import LP from './LP.jsx';
+import SignUp from './Signup.jsx';
+import UserPage from './UserPage.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +19,9 @@ root.render(
       <Routes>
         <Route index element={<LP />}/>
         <Route path="/news" element={<NewsAPI />}/>
-        <Route path="/signin" element={<SignIn />}/>
+        {/* <Route path="/signin" element={<SignIn />}/> */}
+        <Route path="/signup" element={<SignUp />}/>
+        <Route path="/user" element={<UserPage />}/>
       </Routes>
     <Footer/>
     </BrowserRouter>
