@@ -59,7 +59,6 @@ export default function FeaturedCurrency() {
         return changeNumber;
       };
       //↑小数点の整えと時価総額の計算
-
       return (
         <Card key={key} sx={{ maxWidth: 400, marginBottom:2}}>
           <CardMedia sx={{height:220,width:'100%',objectFit:'cover',}} title={coin.name} image={coin.image}/>

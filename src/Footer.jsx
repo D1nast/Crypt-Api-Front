@@ -8,10 +8,10 @@ const Footer = () => {
   return (
         <footer style={{ backgroundColor: '#282c34', color: 'white', padding: '20px 0' }}>
             <div style={{display:'flex',height:'auto',width:'100%'}}>
-                <div style={{flex:'2',paddingLeft:'80px'}}>
-                    <img src="/cnicon.png" alt="Description" style={{ width: '100%', height: 'auto' }} />
+                <div style={{flex:'2',paddingLeft:'80px',width:'30%'}}>
+                    <img src="/cnicon.png" alt="Description" style={{ width: '80%', height: 'auto' }} />
                 </div>
-                <div style={{flex:'8',paddingLeft:'300px'}}>
+                <div style={{flex:'8'}}>
                     <Typography variant="h6" style={{borderBottom:'2px solid white',display:'inline-block',width:'150px'}}>
                         About
                     </Typography>

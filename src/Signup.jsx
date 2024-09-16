@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import {Link}  from '@mui/material';
-import Button from '@mui/material/Button';
+// import {Link}  from '@mui/material';
+// import Button from '@mui/material/Button';
+
 
 export default function SignUp(){
     const [email,setEmail] = useState("");
@@ -22,7 +23,8 @@ export default function SignUp(){
             //右の形でパラメータが送られる　user:{email,password, password_confirmation}
             navigate("/", { replace: true });
         }catch{
-            alert("以下3つのいずれか当てはまるため、登録できません\n\n・既に登録済\n・無効なアドレス\n・パスワードが6文字以下")
+            // alert("以下3つのいずれか当てはまるため、登録できません\n\n・既に登録済\n・無効なアドレス\n・パスワードが6文字以下")
+            alert("登録できませんでした");
         }
     };
     const onClickDeliver = async () => {
@@ -38,19 +40,25 @@ export default function SignUp(){
     };
 
     return(
-        <Box sx={{border:0}} style={{margin:'200px 400px 100px 400px',padding:"40px",display:'flex',
-            flexDirection:'column',alignItems:"center",textAlign:"center",border:"solid #5d627b",boxShadow:"0 3px 5px rgba(0, 0, 0, 0.22)"}}>
-            <Typography style={{marginBottom:"20px"}}>ユーザー登録とメール配信</Typography>
-            <div>
-            <input value={email} placeholder="Mail" onChange={(e) => setEmail(e.target.value)} style={{ width: "400px" }}/>
-            </div>
-            <div style={{marginTop:'50px'}}>
-            <input value={pass} placeholder="Pass(６文字以上)" onChange={(e) => setPass(e.target.value)} style={{ width: "400px"}}/>
-            </div> 
-            <div style={{ marginTop: "20px" }}>
-           <button onClick={onClick}>ユーザー登録</button>
-           <button onClick={onClickDeliver}>配信解除・再開</button>
-           </div>
-        </Box>              
+        <Box sx={{border:0}} style={{marginTop:'200px',display:'flex',flexDirection:'column',justifyContent:'center'}}>
+            <div style={{display:'flex',justifyContent:'center',paddingTop:'20px',paddingBottom:'20px'}}>
+                <div style={{width:"500px",display:"flex",flexDirection:"column",alignItems:"center",
+                    paddingTop:"20px",paddingBottom:"20px",border:"solid #5d627b",boxShadow:"0 3px 5px rgba(0, 0, 0, 0.22)"}}>
+                    <Typography style={{marginBottom:"20px"}}>ユーザー登録とメール配信</Typography>
+                <div>
+                    <input value={email} placeholder="Mail" onChange={(e) => setEmail(e.target.value)} style={{ width: "400px" }}/>
+                </div>
+                <div style={{marginTop:'50px'}}>
+                    <input value={pass} placeholder="Pass(６文字以上)" onChange={(e) => setPass(e.target.value)} style={{ width: "400px"}}/>
+                </div> 
+                <div style={{ marginTop: "20px" }}>
+                    <button onClick={onClick}>ユーザー登録</button>
+                    <button onClick={onClickDeliver}>配信解除・再開</button>
+                </div>
+                </div>
+            </div>     
+        </Box>         
     );
 }
+
+
