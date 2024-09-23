@@ -21,12 +21,12 @@ export default function SignUp(){
             await signup
             console.log(reqBody);
             //右の形でパラメータが送られる　user:{email,password, password_confirmation}
-            navigate("/", { replace: true });
+            alert("ユーザー登録ありがとうございます！")
         }catch{
-            // alert("以下3つのいずれか当てはまるため、登録できません\n\n・既に登録済\n・無効なアドレス\n・パスワードが6文字以下")
-            alert("登録できませんでした");
+            alert("以下3つのいずれか当てはまるため、登録できません\n\n・既に登録済\n・無効なアドレス\n・パスワードが6文字以下")
         }
     };
+    //メール配信の登録と解除
     const onClickDeliver = async () => {
         const url = `${process.env.REACT_APP_API}/change`;
         try{
@@ -34,6 +34,18 @@ export default function SignUp(){
             const signup = await axios.post(url,reqBody);
             await signup
             alert(signup.data)
+        }catch{
+            alert("ユーザー登録がされていないか、メールアドレスもしくはパスワードが誤っています")
+        }
+    };
+    //ユーザー登録削除
+    const onClickDelete = async () => {
+        const url = `${process.env.REACT_APP_API}/delete`;
+        try{
+            const reqBody = { user: { email, password: pass, password_confirmation: pass } };
+            const deleteUser = await axios.post(url,reqBody);
+            await deleteUser;
+            alert("ユーザーの削除が完了しました")
         }catch{
             alert("ユーザー登録がされていないか、メールアドレスもしくはパスワードが誤っています")
         }
@@ -54,6 +66,7 @@ export default function SignUp(){
                 <div style={{ marginTop: "20px" }}>
                     <button onClick={onClick}>ユーザー登録</button>
                     <button onClick={onClickDeliver}>配信解除・再開</button>
+                    <button onClick={onClickDelete}>ユーザー削除</button>
                 </div>
                 </div>
             </div>     
